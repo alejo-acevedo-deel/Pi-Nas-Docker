@@ -4,6 +4,8 @@ services:
   haproxy:
     build: ./haproxy
     container_name: haproxy
+    ports:
+      - 8181:80
   transmission:
     image: linuxserver/transmission
     container_name: transmission
