@@ -13,7 +13,7 @@ services:
     volumes:
       - /srv/dev-disk-by-label-data/AppData/transmission:/config
       - /srv/dev-disk-by-label-backup/Download:/downloads
-      - srv/dev-disk-by-label-backup/Download/torrents:/watch
+      - /srv/dev-disk-by-label-backup/Download/torrents:/watch
     ports:
       - 9091:9091
       - 51413:51413
