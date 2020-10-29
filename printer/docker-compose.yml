@@ -1,0 +1,21 @@
+version: "2"
+
+services:
+  transmission:
+    image: octoprint
+    container_name: octoprint
+    environment:
+      - PUID=1000
+      - PGID=100
+      - TZ=America/Argentina/Buenos_Aires
+      - CAMERA_DEV=/dev/video0
+      - MJPG_STREAMER_INPUT=-y -n -r 1280x720 -f 30
+      - ENABLE_MJPG_STREAMER=true
+    volumes:
+      - /srv/dev-disk-by-label-data/3D-Print/timelapse:/timelapse
+      - /srv/dev-disk-by-label-data/3D-Print/models:/models
+      - /srv/dev-disk-by-label-data/3D-Print/watch:/watch
+    devices:
+      - /dev/video0:/dev/video0
+      - /dev/ttyACM0:/dev/ttyACM0
+    restart: always
