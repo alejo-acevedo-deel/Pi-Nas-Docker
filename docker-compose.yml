@@ -3,7 +3,7 @@ version: "2"
 services:
   haproxy:
     build: haproxy/
-    port:
+    ports:
       - 8080:80
     restart: always
   transmission:
