@@ -45,4 +45,4 @@ services:
 
 networks:
   default:
-    external: false
+    name: default
