@@ -15,6 +15,7 @@ services:
       - TZ=America/Argentina/Buenos_Aires
     volumes:
       - haproxy:/haproxy
+      - /srv/dev-disk-by-label-data/AppData/code-server:/config
   haproxy:
     build: haproxy/
     container_name: haproxy
