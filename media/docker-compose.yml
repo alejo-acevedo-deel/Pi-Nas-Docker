@@ -20,7 +20,7 @@ services:
     build: haproxy/
     container_name: haproxy
     ports:
-      - 8080:80
+      - 80:80
     volumes:
       - haproxy:/usr/local/etc/haproxy
     restart: always
@@ -86,6 +86,3 @@ services:
       - /srv/dev-disk-by-label-backup/Media/movies:/movies
       - /srv/dev-disk-by-label-backup/Media/series:/tv
     restart: unless-stopped
-
-volumes:
-  haproxy:
