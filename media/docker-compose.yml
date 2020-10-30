@@ -22,7 +22,7 @@ services:
     ports:
       - 8080:80
     volumes:
-      - haproxy:/
+      - haproxy:/usr/local/etc/haproxy
     restart: always
   transmission:
     image: linuxserver/transmission
