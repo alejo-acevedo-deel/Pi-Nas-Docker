@@ -3,10 +3,11 @@ version: "2"
 services:
   config-editor:
     image: linuxserver/code-server
+    container_name: config-editor
     ports:
       - 8443:8443
     depends_on:
-      - octoprint
+      - haproxy
     restart: unless-stopped
     environment:
       - PUID=0
@@ -16,6 +17,7 @@ services:
       - haproxy:/haproxy
   haproxy:
     build: haproxy/
+    container_name: haproxy
     ports:
       - 8080:80
     volumes:
