@@ -2,7 +2,7 @@ version: "2"
 
 services:
   transmission:
-    image: octoprint
+    image: octoprint/octoprint
     container_name: octoprint
     environment:
       - PUID=1000
