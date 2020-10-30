@@ -1,7 +1,7 @@
 version: "2"
 
 services:
-  transmission:
+  octoprint:
     image: octoprint/octoprint
     container_name: octoprint
     environment:
