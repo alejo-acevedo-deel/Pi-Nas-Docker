@@ -1,10 +1,25 @@
 version: "2"
 
 services:
+  config-editor:
+    image: linuxserver/code-server
+    ports:
+      - 8443:8443
+    depends_on:
+      - octoprint
+    restart: unless-stopped
+    environment:
+      - PUID=0
+      - GUID=0
+      - TZ=America/Argentina/Buenos_Aires
+    volumes:
+      - haproxy:/haproxy
   haproxy:
     build: haproxy/
     ports:
       - 8080:80
+    volumes:
+      - haproxy:/
     restart: always
   transmission:
     image: linuxserver/transmission
@@ -68,3 +83,6 @@ services:
       - /srv/dev-disk-by-label-backup/Media/movies:/movies
       - /srv/dev-disk-by-label-backup/Media/series:/tv
     restart: unless-stopped
+
+volumes:
+  haproxy:
