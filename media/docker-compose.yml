@@ -86,3 +86,8 @@ services:
       - /srv/dev-disk-by-label-backup/Media/movies:/movies
       - /srv/dev-disk-by-label-backup/Media/series:/tv
     restart: unless-stopped
+networks:
+  default:
+    config:
+      - subnet: 172.18.0.0/16
+        gateway: 172.18.0.1
