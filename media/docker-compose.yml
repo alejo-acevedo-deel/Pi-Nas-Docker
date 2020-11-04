@@ -48,7 +48,7 @@ services:
       - TZ=America/Argentina/Buenos_Aires
     volumes:
       - /srv/dev-disk-by-label-data/AppData/jackett:/config
-      - /srv/dev-disk-by-label-backup/Download/complete:/downloads
+      - /srv/dev-disk-by-label-backup/Download:/downloads
     restart: unless-stopped
   radarr:
     image: linuxserver/radarr
@@ -60,7 +60,7 @@ services:
     volumes:
       - /srv/dev-disk-by-label-data/AppData/radarr:/config
       - /srv/dev-disk-by-label-backup/Media/movies:/movies
-      - /srv/dev-disk-by-label-backup/Download/complete:/downloads
+      - /srv/dev-disk-by-label-backup/Download:/downloads
     restart: unless-stopped
   sonarr:
     image: linuxserver/sonarr
@@ -72,7 +72,7 @@ services:
     volumes:
       - /srv/dev-disk-by-label-data/AppData/sonarr:/config
       - /srv/dev-disk-by-label-backup/Media/series:/tv
-      - /srv/dev-disk-by-label-backup/Download/complete:/downloads
+      - /srv/dev-disk-by-label-backup/Download:/downloads
     restart: unless-stopped
   bazarr:
     image: linuxserver/bazarr
