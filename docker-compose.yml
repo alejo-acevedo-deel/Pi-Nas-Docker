@@ -44,7 +44,7 @@ services:
       - transmission
       - jackett
       - radarr
-      - bazarr
+      - sonarr
   octoprint:
     extends:
       file: printer/docker-compose.yml
