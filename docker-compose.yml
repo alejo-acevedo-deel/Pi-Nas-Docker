@@ -26,14 +26,25 @@ services:
     extends:
       file: media/docker-compose.yml
       service: radarr
+    depends_on:
+      - transmission
+      - jackett
   sonarr:
     extends:
       file: media/docker-compose.yml
       service: sonarr
+    depends_on:
+      - transmission
+      - jackett
   bazarr:
     extends:
       file: media/docker-compose.yml
       service: bazarr
+    depends_on:
+      - transmission
+      - jackett
+      - radarr
+      - bazarr
   octoprint:
     extends:
       file: printer/docker-compose.yml

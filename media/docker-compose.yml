@@ -68,9 +68,6 @@ services:
       - /srv/dev-disk-by-label-backup/Media/movies:/movies
       - /srv/dev-disk-by-label-backup/Download:/downloads
     restart: unless-stopped
-    depends_on:
-      - transmission
-      - jackett
   sonarr:
     image: linuxserver/sonarr
     container_name: sonarr
@@ -83,9 +80,6 @@ services:
       - /srv/dev-disk-by-label-backup/Media/series:/tv
       - /srv/dev-disk-by-label-backup/Download:/downloads
     restart: unless-stopped
-    depends_on:
-      - transmission
-      - jackett
   bazarr:
     image: linuxserver/bazarr
     container_name: bazarr
@@ -98,11 +92,6 @@ services:
       - /srv/dev-disk-by-label-backup/Media/movies:/movies
       - /srv/dev-disk-by-label-backup/Media/series:/tv
     restart: unless-stopped
-    depends_on:
-      - transmission
-      - jackett
-      - radarr
-      - bazarr
 networks:
   default:
     ipam:
