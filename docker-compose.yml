@@ -34,7 +34,7 @@ services:
     extends:
       file: media/docker-compose.yml
       service: bazarr
-  octorprint:
+  octoprint:
     extends:
       file: printer/docker-compose.yml
       service: octoprint

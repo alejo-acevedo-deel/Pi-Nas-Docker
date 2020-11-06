@@ -30,7 +30,6 @@ services:
       - radarr
       - sonarr
       - bazarr
-      - octoprint
   transmission:
     image: linuxserver/transmission
     container_name: transmission
