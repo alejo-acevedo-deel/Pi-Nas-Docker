@@ -93,7 +93,7 @@ services:
       - /srv/dev-disk-by-label-backup/Media/series:/tv
     restart: unless-stopped
   plex:
-    image: ghcr.io/linuxserver/plex
+    image: linuxserver/plex:bionic
     container_name: plex
     environment:
       - VERSION=docker
@@ -101,7 +101,7 @@ services:
       - PUID=1000
       - PGID=100
     volumes:
-      - /srv/dev-disk-by-label-data/AppData/plex:/config
+      - /home/pi/.plex/config:/config
       - /srv/dev-disk-by-label-backup/Media/series:/tv
       - /srv/dev-disk-by-label-backup/Media/movies:/movies
       - /home/pi/.plex/tmp:/transcode
