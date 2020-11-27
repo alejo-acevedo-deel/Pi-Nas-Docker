@@ -93,15 +93,17 @@ services:
       - /srv/dev-disk-by-label-backup/Media/series:/tv
     restart: unless-stopped
   plex:
-    image: plexinc/pms-docker
+    image: ghcr.io/linuxserver/plex
     container_name: plex
     environment:
+      - VERSION=docker
       - TZ=America/Argentina/Buenos_Aires
-      - PLEX_UID=1000
-      - PLEX_GID=100
+      - PUID=1000
+      - PGID=100
     volumes:
       - /srv/dev-disk-by-label-data/AppData/plex:/config
-      - /srv/dev-disk-by-label-backup/Media:/data
+      - /srv/dev-disk-by-label-backup/Media/series:/tv
+      - /srv/dev-disk-by-label-backup/Media/movies:/movies
       - /home/pi/.plex/tmp:/transcode
     ports:
       - 32400:32400/tcp
