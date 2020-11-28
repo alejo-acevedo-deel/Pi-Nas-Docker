@@ -14,6 +14,7 @@ services:
     volumes:
       - /srv/dev-disk-by-label-data/3D-Print/timelapse:/timelapse
       - /srv/dev-disk-by-label-data/3D-Print/models:/models
+      - /srv/dev-disk-by-label-data/3D-Print/octoprint:/octoprint
     devices:
       - /dev/video0:/dev/video0
       - /dev/ttyACM0:/dev/ttyACM0
