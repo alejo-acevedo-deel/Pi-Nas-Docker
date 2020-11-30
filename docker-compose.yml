@@ -53,6 +53,10 @@ services:
     extends:
       file: media/docker-compose.yml
       service: plex
+  ombi:
+    extends:
+      file: media/docker-compose.yml
+      service: plex
 networks:
   default:
     ipam:

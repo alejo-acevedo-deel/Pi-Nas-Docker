@@ -100,6 +100,7 @@ services:
       - TZ=America/Argentina/Buenos_Aires
       - PUID=1000
       - PGID=100
+      - PLEX_CLAIM="${PLEX_CLAIM}"
     volumes:
       - /home/pi/.plex/config:/config
       - /srv/dev-disk-by-label-backup/Media/series:/tv
@@ -115,6 +116,16 @@ services:
       - 32412:32412/udp
       - 32413:32413/udp
       - 32414:32414/udp
+    restart: unless-stopped
+  ombi:
+    image: linuxserver/ombi
+    container_name: ombi
+    environment:
+      - PUID=1000
+      - PGID=100
+      - TZ=America/Argentina/Buenos_Aires
+    volumes:
+      - /srv/dev-disk-by-label-data/AppData/ombi:/config
     restart: unless-stopped
 networks:
   default:
