@@ -1,0 +1,9 @@
+version: '3'
+services:
+  ztdns:
+    container_name: ztdns
+    build: .
+    ports:
+     - "10.144.106.95:53:53/udp"
+    volumes:
+     - .ztdns.toml:/app/.ztdns.toml
