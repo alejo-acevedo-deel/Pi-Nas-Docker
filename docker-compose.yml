@@ -1,6 +1,13 @@
 version: "2"
 
 services:
+  ztdns:
+    container_name: ztdns
+    build: ztdns/
+    ports:
+     - "10.144.106.95:53:53/udp"
+    volumes:
+     - ./ztdns/.ztdns.toml:/app/.ztdns.toml
   haproxy:
     container_name: haproxy
     build: haproxy/
@@ -56,7 +63,7 @@ services:
   ombi:
     extends:
       file: media/docker-compose.yml
-      service: plex
+      service: ombi
 networks:
   default:
     ipam:
