@@ -41,6 +41,7 @@ services:
       - /srv/dev-disk-by-label-data/AppData/transmission:/config
       - /srv/dev-disk-by-label-backup/Download:/downloads
       - /srv/dev-disk-by-label-backup/Download/torrents:/watch
+      - ./transmission/settings.json:/config/settings.json
     ports:
       - 51413:51413
       - 51413:51413/udp
