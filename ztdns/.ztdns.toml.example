@@ -2,7 +2,7 @@
 
 suffix = "zt"
 port = 53
-interface = "zt0"
+interface = "eth0"
 
 # Number of minutes to wait before updating the DNS database again (Default: 30)
 DBRefresh = 30
@@ -19,7 +19,8 @@ URL = "https://my.zerotier.com/api"
 # Domain does not have to match the configured network name
 # Domain default will be not used the url will be member.tz
 [Networks]
+default = "a09acf02331f7b3f"
 
 # Subdomains for network indexed by name, default use "deafult" name
-# Format is: domain.member = ["subdomain"]
 [Subdomains]
+default.pi-nas = ["octoprint", "sonarr", "radarr", "ombi", "plex", "transmission", "bazarr", "jackett"]
