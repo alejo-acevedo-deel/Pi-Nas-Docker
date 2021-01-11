@@ -5,9 +5,9 @@ services:
     container_name: ztdns
     build: ztdns/
     ports:
-     - "10.144.106.95:53:53/udp"
+      - "10.144.106.95:53:53/udp"
     volumes:
-     - ./ztdns/.ztdns.toml:/app/.ztdns.toml
+      - ./ztdns/.ztdns.toml:/app/.ztdns.toml
   haproxy:
     container_name: haproxy
     build: haproxy/
@@ -23,7 +23,7 @@ services:
       - octoprint
   theia:
     container_name: theia
-    image: theiaide/theia
+    image: brjapon/theia-arm
   transmission:
     extends:
       file: media/docker-compose.yml
@@ -55,10 +55,6 @@ services:
       - jackett
       - radarr
       - sonarr
-  octoprint:
-    extends:
-      file: printer/docker-compose.yml
-      service: octoprint
   plex:
     extends:
       file: media/docker-compose.yml
