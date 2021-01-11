@@ -8,7 +8,7 @@ I used some local domain to could reach all my service easily. For these reason 
 
 1. Install avahi-utils `sudo apt-get install avahi-utils`
 2. Move avahi-aliase@.service to /etc/systemd/system `sudo cp avahi-aliase@.service /etc/systemd/system/avahi-aliase@.service`
-3. Publish all required domains `sudo systemctl enable --now avahi-alias@subdomain.domain.service`
+3. Publish all required domains `sudo systemctl enable --now avahi-alias@subdomain.domain.local.service`
 
 ## Zerotier
 

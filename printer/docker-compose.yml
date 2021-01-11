@@ -18,4 +18,5 @@ services:
     devices:
       - /dev/video0:/dev/video0
       - /dev/ttyACM0:/dev/ttyACM0
+      - /dev/i2c-1:/dev/i2c-1
     restart: always

@@ -21,6 +21,9 @@ services:
       - sonarr
       - bazarr
       - octoprint
+  theia:
+    container_name: theia
+    image: theiaide/theia
   transmission:
     extends:
       file: media/docker-compose.yml
