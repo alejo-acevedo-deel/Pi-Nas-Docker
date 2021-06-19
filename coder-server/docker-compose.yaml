@@ -1,0 +1,15 @@
+version: "2"
+
+services:
+  config-editor:
+    image: linuxserver/code-server
+    container_name: code-server
+    ports:
+      - 8443:8443
+    restart: unless-stopped
+    environment:
+      - PUID=0
+      - GUID=0
+      - HASHED_PASSWORD=$argon2i$v=19$m=4096,t=3,p=1$cISkCMe6cT4pyBbBDUeHvg$bCbbVV6IuLEywBZhdyVgS0HBXzmkF3nTC2j7FL+7DWo
+      - SUDO_PASSWOED_HASH=$argon2i$v=19$m=4096,t=3,p=1$cISkCMe6cT4pyBbBDUeHvg$bCbbVV6IuLEywBZhdyVgS0HBXzmkF3nTC2j7FL+7DWo
+      
